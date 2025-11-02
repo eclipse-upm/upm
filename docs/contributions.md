@@ -33,21 +33,20 @@ file:
 Eclipse Contributor Agreement
 ============
 
-Your contribution cannot be accepted unless you have a signed [ECA - Eclipse Foundation Contributor Agreement](http://www.eclipse.org/legal/ECA.php) in place.
+Your contribution cannot be accepted unless you have a signed [ECA - Eclipse Foundation Contributor Agreement](https://www.eclipse.org/legal/eca/) in place.
 
 Here is the checklist for contributions to be considered _acceptable_:
 
-1. [Create an account at Eclipse](https://dev.eclipse.org/site_login/createaccount.php).
+1. [Create an account at Eclipse](https://accounts.eclipse.org/user/register).
 2. Add your GitHub user name in your account settings.
-3. [Log into the project's portal](https://projects.eclipse.org/) and sign the ["Eclipse ECA"](https://projects.eclipse.org/user/sign/cla).
-4. Ensure that you [_sign-off_](https://wiki.eclipse.org/Development_Resources/Contributing_via_Git#Signing_off_on_a_commit) your Git commits.
+3. [Log in to the projects forge](https://www.eclipse.org/contribute/cla/) and sign the ["Eclipse ECA"](https://accounts.eclipse.org/user/eca).
 5. Ensure that you use the _same_ email address as your Eclipse account in commits.
 6. Include the appropriate copyright notice and license at the top of each file.
 
-Your signing of the ECA will be verified by a webservice called 'ip-validation'
-that checks the email address that signed-off on your commits has signed the
+Your signing of the ECA will be verified by a Github Check called 'eclipsefdn/eca'
+that checks the email address that authored your commits has signed the
 ECA. **Note**: This service is case-sensitive, so ensure the email that signed
-the ECA and that signed-off on your commits is the same, down to the case.
+the ECA and that authored your commits is the same, down to the case.
 
 Creating a new sensor library using the sensortemplate
 =======================================
