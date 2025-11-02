@@ -29,8 +29,8 @@ iWater.
 ```
 The developer community is invited to propose new interfaces for actuator types.
 
-The UPM project is joining the Eclipse Foundation as an Eclipse IoT project.
-You can read more about this [here](https://projects.eclipse.org/proposals/eclipse-upm).
+The UPM project is an Eclipse Foundation IoT project.
+You can read more about this [here](https://projects.eclipse.org/projects/iot.upm).
 
 ### Example
 
@@ -63,7 +63,7 @@ A sensor/actuator is expected to work as such (here is the MMA7660 accelerometer
     }
 ```
 
-Browse through the list of all [examples](https://github.com/eclipse/upm/tree/master/examples).
+Browse through the list of all [examples](/examples/).
 
 Multi-sensor samples for starter and specialized kits can be found in the
 [iot-devkit-samples](https://github.com/intel-iot-devkit/iot-devkit-samples) repository.
@@ -77,7 +77,6 @@ Supported [sensor list](http://iotdk.intel.com/docs/master/upm/modules.html) fro
 The UPM project includes support for multiple industrial-grade sensors, actuators, radios,
 protocols and standards in use today. It is also highly integrated with the Eclipse IDE 
 through the help of the Foundation's partners.
-Learn more about [tools](https://software.intel.com/en-us/tools-by-segment/systems-iot).
 
 ### Installing UPM
 
@@ -86,9 +85,6 @@ Find notes on how to install UPM on various OS'es on this [page](docs/installing
 ### Building UPM
 
 See building documentation [here](docs/building.md).
-
-[![Build Status](https://travis-ci.org/intel-iot-devkit/upm.svg?branch=master)](https://travis-ci.org/intel-iot-devkit/upm)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=upm-master&metric=alert_status)](https://sonarcloud.io/dashboard?id=upm-master)
 
 ### Guidelines and rules for new UPM contributions
 
@@ -99,8 +95,8 @@ Next, review the project's [contribution guide](docs/contributions.md).
 
 Make sure you add yourself as an author on every new code file submitted.
 If you are providing a fix with significant changes, feel free to add yourself
-as a contributor. Signing-off your commits and accepting the ECA is mandatory
-for making new contributions to this project.
+as a contributor. Accepting the ECA is mandatory for making new contributions
+to this project.
 
 Documenting your code is also a big part of the task. We have a strict set of
 tags used to classify our sensors and their capabilities. You can find out more
