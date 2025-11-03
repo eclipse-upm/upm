@@ -84,15 +84,27 @@ EBOLED::EBOLED(int spi, int CD, int reset) :
 
   setAddressingMode(HORIZONTAL);
 
+#ifdef EBOLED_128X64
+  //Set Page Address range, required for horizontal addressing mode.
+  command(CMD_SETPAGEADDRESS); // triple-byte cmd
+  command(0x00); //Initial page address
+  command(0x07); //Final page address use all 8 pages
+  //Set Column Address range, required for horizontal addressing mode.
+  command(CMD_SETCOLUMNADDRESS); // triple-byte cmd
+  command(0x00); // this display has no horizontal offset
+  command(0x7f); // 128 columns wide
+#endif           // 128x64
+#ifndef EBOLED_128X64
   //Set Page Address range, required for horizontal addressing mode.
   command(CMD_SETPAGEADDRESS); // triple-byte cmd
   command(0x00); //Initial page address
   command(0x05); //Final page address
-
   //Set Column Address range, required for horizontal addressing mode.
   command(CMD_SETCOLUMNADDRESS); // triple-byte cmd
   command(0x20); // this display has a horizontal offset of 20 columns
   command(0x5f); // 64 columns wide - 0 based 63 offset
+#endif           // 64X48
+
 }
 
 EBOLED::~EBOLED()

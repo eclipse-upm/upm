@@ -28,6 +28,11 @@
 #define EBOLED_DEFAULT_CD      36
 #define EBOLED_DEFAULT_RESET   48
 
+//#define EBOLED_128X64 1
+/* uncomment for to work with 128x64 displays 
+ * like https://robu.in/product/0-96-oled-display-module-spii2c-128x64-7-pin-blue/
+ *
+*/
 #define swap(a, b) { uint8_t t = a; a = b; b = t; }
 
 namespace upm
@@ -35,10 +40,18 @@ namespace upm
   const uint8_t COLOR_WHITE     = 0x01;
   const uint8_t COLOR_BLACK     = 0x00;
   const uint8_t COLOR_XOR       = 0x02;
+#ifdef EBOLED_128X64
+  const uint8_t OLED_WIDTH      = 0x80; // 128 pixels
+  const uint8_t VERT_COLUMNS    = 0x40; // half width for hi/lo 16bit writes.
+  const uint8_t OLED_HEIGHT     = 0x40; // 64 pixels
+  const int     BUFFER_SIZE     = 512;
+#endif //EBOLED_128X64
+#ifndef EBOLED_128X64 // normal EBOLED screen - 64x48
   const uint8_t OLED_WIDTH      = 0x40; // 64 pixels
   const uint8_t VERT_COLUMNS    = 0x20; // half width for hi/lo 16bit writes.
   const uint8_t OLED_HEIGHT     = 0x30; // 48 pixels
   const int     BUFFER_SIZE     = 192;
+#endif //EBOLED 64x48
 
   /**
    * @library lcd
