@@ -1,4 +1,4 @@
-cmake_minimum_required (VERSION 2.8.11)
+cmake_minimum_required (VERSION 3.22)
 project (upm)
 
 # Before going any further, define build options
@@ -260,37 +260,14 @@ set (upm_VERSION_STRING ${upm_VERSION_MAJOR}.${upm_VERSION_MINOR}.${upm_VERSION_
 
 # enable c++11 standards support unconditionally
 include(CheckCXXCompilerFlag)
-if (CMAKE_VERSION VERSION_LESS "3.1")
-  CHECK_CXX_COMPILER_FLAG("-std=c++11" COMPILER_SUPPORTS_CXX11)
-  CHECK_CXX_COMPILER_FLAG("-std=c++0x" COMPILER_SUPPORTS_CXX0X)
-  if (COMPILER_SUPPORTS_CXX11)
-    set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
-  elseif (COMPILER_SUPPORTS_CXX0X)
-    set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")
-  else()
-    message(FATAL_ERROR "A C++11 compliant compiler is required to build UPM.")
-  endif()
-else()
-  # 3.1+ uses this generic method to enable c++11
-  set (CMAKE_CXX_STANDARD 11)
-  set (CXX_STANDARD_REQUIRED ON)
-  set (CXX_EXTENSIONS OFF)
-endif()
+set (CMAKE_CXX_STANDARD 11)
+set (CXX_STANDARD_REQUIRED ON)
+set (CXX_EXTENSIONS OFF)
 
 include(CheckCCompilerFlag)
-if (CMAKE_VERSION VERSION_LESS "3.1")
-  CHECK_C_COMPILER_FLAG("-std=c11" COMPILER_SUPPORTS_C11)
-  if (COMPILER_SUPPORTS_C11)
-    set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c11")
-  else()
-    message(FATAL_ERROR "A C11 compliant C compiler is required to build UPM.")
-  endif()
-else()
-  # 3.1+ uses this generic method to enable c11
-  set (CMAKE_C_STANDARD 11)
-  set (C_STANDARD_REQUIRED ON)
-  set (C_EXTENSIONS OFF)
-endif()
+set (CMAKE_C_STANDARD 11)
+set (C_STANDARD_REQUIRED ON)
+set (C_EXTENSIONS OFF)
 
 # The doc target depends on the C/C++ source and all libraries
 #
